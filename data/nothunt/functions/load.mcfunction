@@ -3,6 +3,7 @@ scoreboard objectives add nothunt.markerrotation dummy
 scoreboard objectives add nothunt.randomrunners dummy
 scoreboard objectives add nothunt.autohunters dummy
 scoreboard objectives add nothunt.joinmanually dummy
+scoreboard objectives add nothunt.objective dummy
 
 scoreboard objectives add JoinRunners trigger
 scoreboard objectives add JoinHunters trigger
