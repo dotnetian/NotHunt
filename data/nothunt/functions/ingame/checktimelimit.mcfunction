@@ -1,0 +1,2 @@
+execute if score #MatinButNot nothunt.timer matches -9..0 run function nothunt:result/runnerswin
+execute if score #MatinButNot nothunt.timer matches 1.. run scoreboard players remove #MatinButNot nothunt.timer 1
