@@ -1,2 +1,2 @@
-scoreboard players add #MatinButNot nothunt.randomrunners 1
+scoreboard players remove #MatinButNot nothunt.randomrunners 1
 function nothunt:settings/index
