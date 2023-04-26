@@ -1,11 +1,6 @@
-team modify NotHunt.Runners collisionRule pushOtherTeams
-team modify NotHunt.Runners friendlyFire false
-team modify NotHunt.Runners prefix {"text": "<Hunter> ", "color": "green"}
-team modify NotHunt.Runners seeFriendlyInvisibles true
+scoreboard players set #MatinButNot nothunt.hunterscount 0
+execute as @a[tag=NotHunt.Player, team=!NotHunt.Runners] at @s run scoreboard players add #MatinButNot nothunt.hunterscount 1
 
-team modify NotHunt.Runners collisionRule pushOtherTeams
-team modify NotHunt.Runners friendlyFire false
-team modify NotHunt.Runners prefix {"text": "<Runner> ", "color": "purple"}
-team modify NotHunt.Runners seeFriendlyInvisibles true
-
-# Check if there is any hunter/runner
+execute if score #MatinButNot nothunt.hunterscount matches 1.. if score #MatinButNot nothunt.runnerscount matches 1.. run function nothunt:begin
+execute if score #MatinButNot nothunt.hunterscount matches 0 run tellraw @s {"color": "red", "text": "At least player should be hunter (not runner) to get started. You can remove runners by this command: /execute as <Player> run function nothunt:leaverunners"}
+execute if score #MatinButNot nothunt.runnerscount matches 0 run tellraw @s {"color": "red", "text": "At least one runner should be in the game to get started"}
