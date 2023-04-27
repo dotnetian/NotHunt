@@ -17,6 +17,7 @@ scoreboard objectives remove nothunt.timer
 tag @a remove NotHunt.Player
 team remove NotHunt.Hunters
 team remove NotHunt.Runners
+team remove NotHunt.Spectators
 
 scoreboard objectives add nothunt.hunterrotation dummy
 scoreboard objectives add nothunt.markerrotation dummy

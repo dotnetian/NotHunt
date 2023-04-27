@@ -2,6 +2,8 @@ tellraw @s ["", {"text": "Done. Players can join the runners team by running /tr
 
 team add NotHunt.Runners
 team add NotHunt.Hunters
+team add NotHunt.Spectators
+
 scoreboard objectives add nothunt.runnerscount dummy
 scoreboard objectives add nothunt.hunterscount dummy
 scoreboard players set #MatinButNot nothunt.hunterscount 0
