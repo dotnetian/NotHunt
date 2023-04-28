@@ -3,4 +3,4 @@ execute as @a[tag=NotHunt.Player] if score @s JoinRunners matches 1 run scoreboa
 execute as @a[tag=NotHunt.Player] if score @s JoinRunners matches 1 run tellraw @a ["", {"selector": "@s", "color": "aqua"}, {"text": " joined the Runners!"}]
 execute as @a[tag=NotHunt.Player] if score @s JoinRunners matches 1 run scoreboard players set @s JoinRunners 0
 
-schedule function nothunt:runnertrigger 5t
+schedule function nothunt:preparation/runnertrigger 5t

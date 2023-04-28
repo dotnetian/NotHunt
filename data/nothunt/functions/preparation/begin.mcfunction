@@ -111,6 +111,13 @@ execute if score #MatinButNot nothunt.huntersboost matches 6 run tellraw @a "- H
 execute if score #MatinButNot nothunt.huntersboost matches 7 run tellraw @a "- Hunters: Doubled Hearts"
 execute if score #MatinButNot nothunt.huntersboost matches 8 run tellraw @a "- Hunters: Speed"
 
+execute if score #MatinButNot nothunt.hunterscountdown matches 0 run tellraw @a "- Hunters Countdown: Off"
+execute if score #MatinButNot nothunt.hunterscountdown matches 1 run tellraw @a "- Hunters Countdown: 15 Seconds"
+execute if score #MatinButNot nothunt.hunterscountdown matches 2 run tellraw @a "- Hunters Countdown: 30 Seconds"
+execute if score #MatinButNot nothunt.hunterscountdown matches 3 run tellraw @a "- Hunters Countdown: 60 Seconds"
+execute if score #MatinButNot nothunt.hunterscountdown matches 4 run tellraw @a "- Hunters Countdown: 5 Minutes"
+execute if score #MatinButNot nothunt.hunterscountdown matches 5 run tellraw @a "- Hunters Countdown: 10 Minutes"
+
 team modify NotHunt.Hunters friendlyFire false
 team modify NotHunt.Hunters prefix {"text": "<Hunter> ", "color": "green"}
 team modify NotHunt.Hunters seeFriendlyInvisibles true
@@ -123,4 +130,10 @@ team modify NotHunt.Spectators friendlyFire false
 team modify NotHunt.Spectators prefix {"text": "<Spectator> "}
 team modify NotHunt.Spectators seeFriendlyInvisibles true
 
-schedule function nothunt:start/hunters 30s
+
+execute if score #MatinButNot nothunt.hunterscountdown matches 0 run function nothunt:preparation/starthunters
+execute if score #MatinButNot nothunt.hunterscountdown matches 1 run schedule function nothunt:preparation/starthunters 15s
+execute if score #MatinButNot nothunt.hunterscountdown matches 2 run schedule function nothunt:preparation/starthunters 30s
+execute if score #MatinButNot nothunt.hunterscountdown matches 3 run schedule function nothunt:preparation/starthunters 60s
+execute if score #MatinButNot nothunt.hunterscountdown matches 4 run schedule function nothunt:preparation/starthunters 300s
+execute if score #MatinButNot nothunt.hunterscountdown matches 5 run schedule function nothunt:preparation/starthunters 600s

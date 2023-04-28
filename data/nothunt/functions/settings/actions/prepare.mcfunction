@@ -1,4 +1,4 @@
-tellraw @s ["", {"text": "Done. Players can join the runners team by running /trigger JoinRunners command. To add them manually yourself, click here or run /execute as <Player> run trigger JoinRunners.", "clickEvent": {"action": "suggest_command", "value": "/execute as MatinButNot run trigger JoinRunners"}}, {"text": "When done, click here or run /function nothunt:start to start the match. Enjoy!", "clickEvent": {"action": "suggest_command", "value": "/function nothunt:start"}}]
+tellraw @s ["", {"text": "Done. Players can join the runners team by running /trigger JoinRunners command. To add them manually yourself, click here or run /execute as <Player> run trigger JoinRunners.", "clickEvent": {"action": "suggest_command", "value": "/execute as MatinButNot run trigger JoinRunners"}}, {"text": "When done, click here or run /function nothunt:preparation/start to start the match. Enjoy!", "clickEvent": {"action": "suggest_command", "value": "/function nothunt:preparation/start"}}]
 
 team add NotHunt.Runners
 team add NotHunt.Hunters
@@ -10,7 +10,7 @@ scoreboard players set #MatinButNot nothunt.hunterscount 0
 scoreboard players set #MatinButNot nothunt.runnerscount 0
 
 execute if score #MatinButNot nothunt.randomrunners matches 0 as @a[tag=NotHunt.Player] at @s run scoreboard players enable @s JoinRunners
-execute if score #MatinButNot nothunt.randomrunners matches 0 as @a[tag=NotHunt.Player] at @s run function nothunt:runnertrigger
+execute if score #MatinButNot nothunt.randomrunners matches 0 as @a[tag=NotHunt.Player] at @s run function nothunt:preparation/runnertrigger
 
 execute if score #MatinButNot nothunt.randomrunners matches 1.. as @r[tag=NotHunt.Player] run team join NotHunt.Runners @s
 execute if score #MatinButNot nothunt.randomrunners matches 2.. as @r[tag=NotHunt.Player] run team join NotHunt.Runners @s
