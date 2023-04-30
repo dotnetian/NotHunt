@@ -40,4 +40,3 @@ scoreboard players set #MatinButNot nothunt.timer -10
 scoreboard objectives add nothunt.hunterscountdown dummy
 scoreboard players set #MatinButNot nothunt.hunterscountdown 0
 scoreboard objectives add JoinRunners trigger
-
