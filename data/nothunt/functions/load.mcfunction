@@ -20,6 +20,7 @@ team remove NotHunt.Runners
 team remove NotHunt.Spectators
 
 scoreboard objectives add nothunt.hunterrotation dummy
+scoreboard players set #MatinButNot nothunt.hunterrotation 360
 scoreboard objectives add nothunt.markerrotation dummy
 scoreboard objectives add nothunt.randomrunners dummy
 scoreboard players set #MatinButNot nothunt.randomrunners 0
