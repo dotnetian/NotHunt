@@ -1,2 +1,2 @@
-scoreboard players set #MatinButNot nothunt.objective 1
-function nothunt:settings
+execute if entity @a[team=NotHunt.Runners,advancements={story/mine_diamond=true}] run function nothunt:ingame/objectives/runnerswin
+execute if entity @a[team=NotHunt.Runners,advancements={story/mine_diamond=true}] run reload

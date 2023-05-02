@@ -1,2 +1,2 @@
-scoreboard players set #MatinButNot nothunt.objective 2
-function nothunt:settings
+execute if entity @a[team=NotHunt.Runners,advancements={story/enter_the_nether=true}] run function nothunt:ingame/objectives/runnerswin
+execute if entity @a[team=NotHunt.Runners,advancements={story/enter_the_nether=true}] run function nothunt:endmatch
