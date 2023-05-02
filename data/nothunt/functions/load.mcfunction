@@ -13,11 +13,16 @@ scoreboard objectives remove nothunt.randomrunners
 scoreboard objectives remove nothunt.runnersboost
 scoreboard objectives remove nothunt.runnerscount
 scoreboard objectives remove nothunt.timer
+scoreboard objectives remove nothunt.hunterscountdown
+scoreboard objectives remove nothunt.deathcount
 
 tag @a remove NotHunt.Player
 team remove NotHunt.Hunters
 team remove NotHunt.Runners
 team remove NotHunt.Spectators
+schedule clear nothunt:ingame/checktimelimit
+schedule clear nothunt:ingame/loop
+schedule clear nothunt:preparation/runnertrigger
 
 scoreboard objectives add nothunt.hunterrotation dummy
 scoreboard players set #MatinButNot nothunt.hunterrotation 360
@@ -41,3 +46,6 @@ scoreboard players set #MatinButNot nothunt.timer -10
 scoreboard objectives add nothunt.hunterscountdown dummy
 scoreboard players set #MatinButNot nothunt.hunterscountdown 0
 scoreboard objectives add JoinRunners trigger
+scoreboard objectives add nothunt.deathcount deathCount
+
+execute as MatinButNot run function nothunt:settings

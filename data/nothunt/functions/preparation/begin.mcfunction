@@ -138,4 +138,7 @@ execute if score #MatinButNot nothunt.hunterscountdown matches 3 run schedule fu
 execute if score #MatinButNot nothunt.hunterscountdown matches 4 run schedule function nothunt:preparation/starthunters 300s
 execute if score #MatinButNot nothunt.hunterscountdown matches 5 run schedule function nothunt:preparation/starthunters 600s
 
+scoreboard players set @a nothunt.deathcount 0
+
 function nothunt:ingame/loop
+function nothunt:ingame/checktimelimit
