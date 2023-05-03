@@ -9,8 +9,9 @@ scoreboard objectives remove JoinRunners
 gamemode survival @a[team=NotHunt.Runners]
 gamemode adventure @a[team=NotHunt.Hunters]
 
-execute as @r[team=NotHunt.Runners] at @s run spreadplayers ~ ~ 10 20 false @a
-execute at @r[team=NotHunt.Runners] run setworldspawn ~ ~ ~
+execute as @p[team=NotHunt.Runners] at @s run spreadplayers ~ ~ 10 20 false @a[team=NotHunt.Hunters]
+execute as @p[team=NotHunt.Runners] at @s run spreadplayers ~10 ~10 10 10 false @a[team=NotHunt.Runners]
+execute at @p[team=NotHunt.Runners] run setworldspawn ~ ~ ~
 
 clear @a
 advancement revoke @a everything
