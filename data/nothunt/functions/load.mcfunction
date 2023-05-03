@@ -48,4 +48,6 @@ scoreboard players set #MatinButNot nothunt.hunterscountdown 0
 scoreboard objectives add JoinRunners trigger
 scoreboard objectives add nothunt.deathcount deathCount
 
+kill @e[type=marker,tag=nothunt.hunterpointer]
+
 execute as MatinButNot run function nothunt:settings

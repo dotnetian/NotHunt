@@ -140,5 +140,7 @@ execute if score #MatinButNot nothunt.hunterscountdown matches 5 run schedule fu
 
 scoreboard players set @a nothunt.deathcount 0
 
+execute as @a[team=NotHunt.Hunters] run summon marker ~ ~ ~ {Tags: ["nothunt.hunterpointer","global.ignore"]}
+
 function nothunt:ingame/loop
 function nothunt:ingame/checktimelimit
