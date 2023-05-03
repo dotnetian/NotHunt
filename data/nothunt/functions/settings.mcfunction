@@ -1,15 +1,9 @@
-# TODO: Check if the game hesen't been started
-
 tellraw @s "\n\n\n\n\n\n\n\n\n\u00A7m                                         "
 tellraw @s {"text": "NotHunt Settings\n", "bold": true, "color": "aqua"}
 
 
-
 execute if score #MatinButNot nothunt.joinmanually matches 0 run tellraw @s ["", {"text": "- Join Players Manually ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "With this enabled, each player that joins the world automatically becomes spectator when the match is started. Operators can add players to the match by running /execute as <Player> at @s run function nothunt:join or clicking here"}, "clickEvent": {"action": "suggest_command", "value": "/execute at MatinButNot run function nothunt:join"}}, {"text": "[❌]", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/manualjoin/enable"}}]
 execute if score #MatinButNot nothunt.joinmanually matches 1 run tellraw @s ["", {"text": "- Join Players Manually ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "With this enabled, each player that joins the world automatically becomes spectator when the match is started. Operators can add players to the match by running /execute as <Player> at @s run function nothunt:join or clicking here"}, "clickEvent": {"action": "suggest_command", "value": "/execute at MatinButNot run function nothunt:join"}}, {"text": "[✔]", "color": "green", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/manualjoin/disable"}}]
-
-
-# tellraw @s ["", {"text": "\n"}]
 
 
 execute if score #MatinButNot nothunt.objective matches 0 run tellraw @s ["", {"text": "- Runners Objective: ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "The mission that the runner(s) should complete to win"}}, {"text": "<  Kill the Ender Dragon  >", "color": "yellow", "hoverEvent": {"action": "show_text", "value": "The classic Manhunt. Runner(s) should go to the end and kill the Ender Dragon to win"}, "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/objectives/getadiamond"}}]
@@ -28,9 +22,6 @@ execute if score #MatinButNot nothunt.objective matches 3 if score #MatinButNot 
 execute if score #MatinButNot nothunt.objective matches 3 if score #MatinButNot nothunt.timer matches 10800 run tellraw @s ["", {"text": "   ↳ Survivor Timer ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "If runners survive for this time, they'll win"}}, {"text": "<  ", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/120min"}} ,{"text": "180 Minutes", "color": "yellow"}, {"text": "  >", "color": "gray"}]
 
 
-# tellraw @s ["", {"text": "\n"}]
-
-
 execute unless score #MatinButNot nothunt.objective matches 3 if score #MatinButNot nothunt.timer matches -10 run tellraw @s ["", {"text": "- Game Timer ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "If completing the objective took longer than this time for runner(s), they'll lose and hunter(s) will win"}}, {"text": "<  ", "color": "gray"} ,{"text": " Disabled ", "color": "yellow"}, {"text": "  >", "color": "green", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/5min"}}]
 execute unless score #MatinButNot nothunt.objective matches 3 if score #MatinButNot nothunt.timer matches 300 run tellraw @s ["", {"text": "- Game Timer ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "If completing the objective took longer than this time for runner(s), they'll lose and hunter(s) will win"}}, {"text": "<  ", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/disable"}} ,{"text": "5 Minutes", "color": "yellow"}, {"text": "  >", "color": "green", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/10min"}}]
 execute unless score #MatinButNot nothunt.objective matches 3 if score #MatinButNot nothunt.timer matches 600 run tellraw @s ["", {"text": "- Game Timer ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "If completing the objective took longer than this time for runner(s), they'll lose and hunter(s) will win"}}, {"text": "<  ", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/5min"}} ,{"text": "10 Minutes", "color": "yellow"}, {"text": "  >", "color": "green", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/20min"}}]
@@ -41,9 +32,6 @@ execute unless score #MatinButNot nothunt.objective matches 3 if score #MatinBut
 execute unless score #MatinButNot nothunt.objective matches 3 if score #MatinButNot nothunt.timer matches 5400 run tellraw @s ["", {"text": "- Game Timer ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "If completing the objective took longer than this time for runner(s), they'll lose and hunter(s) will win"}}, {"text": "<  ", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/60min"}} ,{"text": "90 Minutes", "color": "yellow"}, {"text": "  >", "color": "green", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/120min"}}]
 execute unless score #MatinButNot nothunt.objective matches 3 if score #MatinButNot nothunt.timer matches 7200 run tellraw @s ["", {"text": "- Game Timer ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "If completing the objective took longer than this time for runner(s), they'll lose and hunter(s) will win"}}, {"text": "<  ", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/90min"}} ,{"text": "120 Minutes", "color": "yellow"}, {"text": "  >", "color": "green", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/180min"}}]
 execute unless score #MatinButNot nothunt.objective matches 3 if score #MatinButNot nothunt.timer matches 10800 run tellraw @s ["", {"text": "- Game Timer ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "If completing the objective took longer than this time for runner(s), they'll lose and hunter(s) will win"}}, {"text": "<  ", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/timer/120min"}} ,{"text": "180 Minutes", "color": "yellow"}, {"text": "  >", "color": "gray"}]
-
-
-# execute unless score #MatinButNot nothunt.objective matches 3 run tellraw @s ["", {"text": "\n"}]
 
 
 execute if score #MatinButNot nothunt.randomrunners matches 0 run tellraw @s ["", {"text": "- Choose Runners Randomly ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "Instead of choosing runners manually, this feature will choose the runner(s) randomly between the players that have joined the game, either automatically or by the operator, according to \"Join Players Manually\" setting. You can also set the count of runners you wish to have in the match"}}, {"text": "<  ", "color": "gray"} ,{"text": "Disabled", "color": "yellow"}, {"text": "  >", "color": "green", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/randomrunners/addrandom"}}]
@@ -69,21 +57,12 @@ execute if score #MatinButNot nothunt.randomrunners matches 19 run tellraw @s ["
 execute if score #MatinButNot nothunt.randomrunners matches 20 run tellraw @s ["", {"text": "- Choose Runners Randomly ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "Instead of choosing runners manually, this feature will choose the runner(s) randomly between the players that have joined the game, either automatically or by the operator, according to \"Join Players Manually\" setting. You can also set the count of runners you wish to have in the match"}}, {"text": "<  ", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/randomrunners/removerandom"}} ,{"text": "   20   ", "color": "yellow"}, {"text": "  >", "color": "gray", "hoverEvent": {"action": "show_text", "value": "Dude, do you seriously want to add more than 20 RUNNERS?!"}}]
 
 
-# tellraw @s ["", {"text": "\n"}]
-
-
 execute if score #MatinButNot nothunt.huntersglow matches 0 run tellraw @s ["", {"text": "- Glow Hunters When They're Close ", "color": "gray", "hoverEvent": {"action": "show_text","value": "When enabled, when hunters get close to a runner (15 blocks), they'll glow so they will be visible to runners even behind walls and blocks"}}, {"text": "[❌]", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/huntersglow/enable"}}]
 execute if score #MatinButNot nothunt.huntersglow matches 1 run tellraw @s ["", {"text": "- Glow Hunters When They're Close ", "color": "gray", "hoverEvent": {"action": "show_text","value": "When enabled, when hunters get close to a runner (15 blocks), they'll glow so they will be visible to runners even behind walls and blocks"}}, {"text": "[✔]", "color": "green", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/huntersglow/disable"}}]
 
 
-# tellraw @s ["", {"text": "\n"}]
-
-
 execute if score #MatinButNot nothunt.huntersalert matches 0 run tellraw @s ["", {"text": "- Alert Runners When Hunters Are Close ", "color": "gray", "hoverEvent": {"action": "show_text","value": "When enabled, when hunters get close to a runner (20 blocks), the runner(s) that the hunter(s) are getting close to them will recieve an alert in chat. Hunters name is not reported in the alert"}}, {"text": "[❌]", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/huntersalert/enable"}}]
 execute if score #MatinButNot nothunt.huntersalert matches 1 run tellraw @s ["", {"text": "- Alert Runners When Hunters Are Close ", "color": "gray", "hoverEvent": {"action": "show_text","value": "When enabled, when hunters get close to a runner (20 blocks), the runner(s) that the hunter(s) are getting close to them will recieve an alert in chat. Hunters name is not reported in the alert"}}, {"text": "[✔]", "color": "green", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/huntersalert/disable"}}]
-
-
-# tellraw @s ["", {"text": "\n"}]
 
 
 execute if score #MatinButNot nothunt.huntersboost matches 0 run tellraw @s ["", {"text": "- Hunters Boost ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "You can choose an effect and that will be given to all of the hunters all during the game"}}, {"text": "< None >", "color": "yellow", "hoverEvent": {"action": "show_text", "value": "No additional effect will be given to hunters"} ,"clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/huntersboost/fastswim"}}]
@@ -97,8 +76,6 @@ execute if score #MatinButNot nothunt.huntersboost matches 7 run tellraw @s ["",
 execute if score #MatinButNot nothunt.huntersboost matches 8 run tellraw @s ["", {"text": "- Hunters Boost ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "You can choose an effect and that will be given to all of the hunters all during the game"}}, {"text": "< Double Hearts >", "color": "yellow", "hoverEvent": {"action": "show_text", "value": "Hunters will have 40 halfs of heart (20 red hearts), instead of 20 (10 red hearts)"} ,"clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/huntersboost/speed"}}]
 execute if score #MatinButNot nothunt.huntersboost matches 9 run tellraw @s ["", {"text": "- Hunters Boost ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "You can choose an effect and that will be given to all of the hunters all during the game"}}, {"text": "< Speed Boost >", "color": "yellow", "hoverEvent": {"action": "show_text", "value": "Hunters get speed effect, so they can move faster than normal"} ,"clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/huntersboost/disable"}}]
 
-
-# tellraw @s ["", {"text": "\n"}]
 
 execute if score #MatinButNot nothunt.runnersboost matches 0 run tellraw @s ["", {"text": "- Runners Boost ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "You can choose an effect and that will be given to all of the runners all during the game"}}, {"text": "< None >", "color": "yellow", "hoverEvent": {"action": "show_text", "value": "No additional effect will be given to runners"} ,"clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/runnersboost/fastswim"}}]
 execute if score #MatinButNot nothunt.runnersboost matches 1 run tellraw @s ["", {"text": "- Runners Boost ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "You can choose an effect and that will be given to all of the runners all during the game"}}, {"text": "< Fast Swimming >", "color": "yellow", "hoverEvent": {"action": "show_text", "value": "Runners will have the Dolphin's Grace effect, so they'll swim faster than normal"} ,"clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/runnersboost/fireresistance"}}]
@@ -119,10 +96,4 @@ execute if score #MatinButNot nothunt.hunterscountdown matches 4 run tellraw @s 
 execute if score #MatinButNot nothunt.hunterscountdown matches 5 run tellraw @s ["", {"text": "- Hunters Countdown ", "color": "gray", "hoverEvent": {"action": "show_text", "value": "If enabled, all hunters will be freezed at the beggining of the game for this while"}}, {"text": "< ", "color": "red", "clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/hunterscountdown/5min"}}, {"text": "10 Minutes", "color": "yellow"}, {"text": " >", "color": "gray"}]
 
 
-# tellraw @s ["", {"text": "\n"}]
-
-
 tellraw @s ["", {"text": "                                 "}, {"text": "[Done]", "color": "yellow","clickEvent": {"action": "run_command", "value": "/function nothunt:settings/actions/done"}}]
-
-
-# tellraw @s ["", {"text": "\n"}]

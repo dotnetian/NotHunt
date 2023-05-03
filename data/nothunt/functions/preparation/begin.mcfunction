@@ -84,12 +84,10 @@ execute if score #MatinButNot nothunt.objective matches 3 if score #MatinButNot 
 
 tellraw @a {"text": "Hunters Objective: Kill all of the runners before they complete their objective", "color": "yellow"}
 
-tellraw @a "\nMathch Twists:"
+tellraw @a "\nHandicaps:"
 
 execute if score #MatinButNot nothunt.huntersglow matches 1 run tellraw @a {"text": "- Hunters will glow when they get close to the Runners"}
 execute if score #MatinButNot nothunt.huntersalert matches 1 run tellraw @a {"text": "- Runners will get an alert message in chat when there's a hunter close to them"}
-
-tellraw @a "\nHandicaps:"
 
 execute if score #MatinButNot nothunt.runnersboost matches 0 run tellraw @a "- Runners: Nothing"
 execute if score #MatinButNot nothunt.runnersboost matches 1 run tellraw @a "- Runners: Faster Swimming"
