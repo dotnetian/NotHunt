@@ -3,8 +3,6 @@ schedule function nothunt:ingame/checktimelimit 1s
 execute if score #MatinButNot nothunt.objective matches 3 if score #MatinButNot nothunt.timer matches -9..0 run function nothunt:ingame/objectives/runnerswin
 execute unless score #MatinButNot nothunt.objective matches 3 if score #MatinButNot nothunt.timer matches -9..0 run function nothunt:ingame/objectives/hunterswin
 
-title @a actionbar {"score":{"name":"#MatinButNot","objective":"nothunt.timer"}}
-
 execute if score #MatinButNot nothunt.timer matches 1800 run tellraw @a {"text": "30 Minutes Left", "color": "red"}
 execute if score #MatinButNot nothunt.timer matches 600 run tellraw @a {"text": "10 Minutes Left", "color": "red"}
 execute if score #MatinButNot nothunt.timer matches 300 run tellraw @a {"text": "5 Minutes Left", "color": "red"}

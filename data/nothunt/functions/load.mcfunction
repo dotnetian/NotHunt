@@ -13,8 +13,16 @@ scoreboard objectives remove nothunt.randomrunners
 scoreboard objectives remove nothunt.runnersboost
 scoreboard objectives remove nothunt.runnerscount
 scoreboard objectives remove nothunt.timer
+scoreboard objectives remove nothunt.timer.hours
+scoreboard objectives remove nothunt.timer.minutes
+scoreboard objectives remove nothunt.timer.seconds
+scoreboard objectives remove nothunt.timer.const
+scoreboard objectives remove nothunt.timer.temp
 scoreboard objectives remove nothunt.hunterscountdown
 scoreboard objectives remove nothunt.deathcount
+scoreboard objectives remove nothunt.posx
+scoreboard objectives remove nothunt.posy
+scoreboard objectives remove nothunt.posz
 
 tag @a remove NotHunt.Player
 team remove NotHunt.Hunters
@@ -43,11 +51,21 @@ scoreboard objectives add nothunt.runnersboost dummy
 scoreboard players set #MatinButNot nothunt.runnersboost 0
 scoreboard objectives add nothunt.timer dummy
 scoreboard players set #MatinButNot nothunt.timer -10
+scoreboard objectives add nothunt.timer.hours dummy
+scoreboard objectives add nothunt.timer.minutes dummy
+scoreboard objectives add nothunt.timer.seconds dummy
+scoreboard objectives add nothunt.timer.const dummy
+scoreboard objectives add nothunt.timer.temp dummy
 scoreboard objectives add nothunt.hunterscountdown dummy
 scoreboard players set #MatinButNot nothunt.hunterscountdown 0
 scoreboard objectives add JoinRunners trigger
 scoreboard objectives add nothunt.deathcount deathCount
+scoreboard objectives add nothunt.posx dummy
+scoreboard objectives add nothunt.posy dummy
+scoreboard objectives add nothunt.posz dummy
 
 kill @e[type=marker,tag=nothunt.hunterpointer]
 
 execute as MatinButNot run function nothunt:settings
+
+schedule clear nothunt:timer

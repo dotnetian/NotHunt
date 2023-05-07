@@ -1,0 +1,20 @@
+schedule function nothunt:timer 1t
+
+scoreboard players operation #MatinButNot nothunt.timer.seconds = #MatinButNot nothunt.timer
+scoreboard players operation #MatinButNot nothunt.timer.minutes = #MatinButNot nothunt.timer
+scoreboard players operation #MatinButNot nothunt.timer.hours = #MatinButNot nothunt.timer
+scoreboard players set #MatinButNot nothunt.timer.const 60
+scoreboard players operation #MatinButNot nothunt.timer.seconds %= #MatinButNot nothunt.timer.const
+scoreboard players operation #MatinButNot nothunt.timer.minutes /= #MatinButNot nothunt.timer.const
+scoreboard players operation #MatinButNot nothunt.timer.minutes %= #MatinButNot nothunt.timer.const
+scoreboard players operation #MatinButNot nothunt.timer.hours /= #MatinButNot nothunt.timer.const
+scoreboard players operation #MatinButNot nothunt.timer.hours /= #MatinButNot nothunt.timer.const
+
+execute if score #MatinButNot nothunt.timer.minutes matches ..9 if score #MatinButNot nothunt.timer.seconds matches ..9 if score #MatinButNot nothunt.timer.hours matches 0 run tellraw @a [{"text":"0"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.minutes"}},{"text":":0"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.seconds"}}]
+execute if score #MatinButNot nothunt.timer.minutes matches ..9 if score #MatinButNot nothunt.timer.seconds matches ..9 unless score #MatinButNot nothunt.timer.hours matches 0 run tellraw @a [{"score":{"name":"#MatinButNot","objective":"nothunt.timer.hours"}},{"text":":0"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.minutes"}},{"text":":0"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.seconds"}}]
+execute if score #MatinButNot nothunt.timer.minutes matches ..9 unless score #MatinButNot nothunt.timer.seconds matches ..9 if score #MatinButNot nothunt.timer.hours matches 0 run tellraw @a [{"text":"0"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.minutes"}},{"text":":"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.seconds"}}]
+execute if score #MatinButNot nothunt.timer.minutes matches ..9 unless score #MatinButNot nothunt.timer.seconds matches ..9 unless score #MatinButNot nothunt.timer.hours matches 0 run tellraw @a [{"score":{"name":"#MatinButNot","objective":"nothunt.timer.hours"}},{"text":":0"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.minutes"}},{"text":":"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.seconds"}}]
+execute unless score #MatinButNot nothunt.timer.minutes matches ..9 if score #MatinButNot nothunt.timer.seconds matches ..9 if score #MatinButNot nothunt.timer.hours matches 0 run tellraw @a [{"text":""},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.minutes"}},{"text":":0"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.seconds"}}]
+execute unless score #MatinButNot nothunt.timer.minutes matches ..9 if score #MatinButNot nothunt.timer.seconds matches ..9 unless score #MatinButNot nothunt.timer.hours matches 0 run tellraw @a [{"score":{"name":"#MatinButNot","objective":"nothunt.timer.hours"}},{"text":":"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.minutes"}},{"text":":0"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.seconds"}}]
+execute unless score #MatinButNot nothunt.timer.minutes matches ..9 unless score #MatinButNot nothunt.timer.seconds matches ..9 if score #MatinButNot nothunt.timer.hours matches 0 run tellraw @a [{"text":""},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.minutes"}},{"text":":"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.seconds"}}]
+execute unless score #MatinButNot nothunt.timer.minutes matches ..9 unless score #MatinButNot nothunt.timer.seconds matches ..9 unless score #MatinButNot nothunt.timer.hours matches 0 run tellraw @a [{"score":{"name":"#MatinButNot","objective":"nothunt.timer.hours"}},{"text":":"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.minutes"}},{"text":":"},{"score":{"name":"#MatinButNot","objective":"nothunt.timer.seconds"}}]
