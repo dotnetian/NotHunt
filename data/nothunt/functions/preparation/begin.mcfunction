@@ -2,6 +2,11 @@ team join NotHunt.Hunters @a[tag=NotHunt.Player, team=!NotHunt.Runners]
 team join NotHunt.Spectators @a[tag=!NotHunt.Player]
 gamemode spectator @a[team=NotHunt.Spectators]
 
+tellraw @a {"score": {"name": "#MatinButNot", "objective": "nothunt.timer"}}
+execute unless score #MatinButNot nothunt.timer matches -10 run function nothunt:ingame/checktimelimit
+execute if score #MatinButNot nothunt.timer matches -10 run scoreboard players set #MatinButNot nothunt.timer 0
+execute if score #MatinButNot nothunt.timer matches 0 run function nothunt:ingame/stopwatch
+
 
 tag @a remove NotHunt.Player
 scoreboard objectives remove JoinRunners
@@ -142,4 +147,3 @@ scoreboard players set @a nothunt.deathcount 0
 execute as @a[team=NotHunt.Hunters] run summon marker ~ ~ ~ {Tags: ["nothunt.hunterpointer","global.ignore"]}
 
 function nothunt:ingame/loop
-function nothunt:ingame/checktimelimit

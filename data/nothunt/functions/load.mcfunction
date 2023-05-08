@@ -31,6 +31,7 @@ team remove NotHunt.Spectators
 schedule clear nothunt:ingame/checktimelimit
 schedule clear nothunt:ingame/loop
 schedule clear nothunt:preparation/runnertrigger
+schedule clear nothunt:ingame/stopwatch
 
 scoreboard objectives add nothunt.hunterrotation dummy
 scoreboard players set #MatinButNot nothunt.hunterrotation 360
