@@ -26,11 +26,13 @@ scoreboard objectives remove nothunt.posz
 scoreboard objectives remove nothunt.runnershud
 scoreboard objectives remove Hud
 scoreboard objectives remove nothunt.latesthudstate
+scoreboard objectives remove nothunt.runnerslives
 
 tag @a remove NotHunt.Player
 team remove NotHunt.Hunters
 team remove NotHunt.Runners
 team remove NotHunt.Spectators
+advancement revoke @a everything
 schedule clear nothunt:ingame/checktimelimit
 schedule clear nothunt:ingame/loop
 schedule clear nothunt:preparation/runnertrigger
@@ -72,6 +74,10 @@ scoreboard players set @a nothunt.runnershud 1
 scoreboard objectives add Hud trigger
 scoreboard objectives add nothunt.latesthudstate dummy
 scoreboard players set @a nothunt.latesthudstate 1
+scoreboard objectives add nothunt.runnerslives dummy
+scoreboard players set #MatinButNot nothunt.runnerslives 1
+scoreboard objectives add nothunt.deadrunners dummy
+scoreboard players set #MatinButNot nothunt.deadrunners 0
 
 kill @e[type=marker,tag=nothunt.hunterpointer]
 

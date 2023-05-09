@@ -122,6 +122,8 @@ execute if score #MatinButNot nothunt.hunterscountdown matches 3 run tellraw @a 
 execute if score #MatinButNot nothunt.hunterscountdown matches 4 run tellraw @a "- Hunters Countdown: 5 Minutes"
 execute if score #MatinButNot nothunt.hunterscountdown matches 5 run tellraw @a "- Hunters Countdown: 10 Minutes"
 
+# TODO: Display runners lives
+
 team modify NotHunt.Hunters friendlyFire false
 team modify NotHunt.Hunters prefix {"text": "<Hunter> ", "color": "green"}
 team modify NotHunt.Hunters seeFriendlyInvisibles true
