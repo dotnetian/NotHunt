@@ -75,6 +75,7 @@ scoreboard players set @a nothunt.latesthudstate 1
 
 kill @e[type=marker,tag=nothunt.hunterpointer]
 
+# TODO: REMOVE
 execute as MatinButNot run function nothunt:settings
 
 schedule clear nothunt:timer
