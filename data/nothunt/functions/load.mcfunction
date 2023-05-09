@@ -23,6 +23,9 @@ scoreboard objectives remove nothunt.deathcount
 scoreboard objectives remove nothunt.posx
 scoreboard objectives remove nothunt.posy
 scoreboard objectives remove nothunt.posz
+scoreboard objectives remove nothunt.runnershud
+scoreboard objectives remove Hud
+scoreboard objectives remove nothunt.latesthudstate
 
 tag @a remove NotHunt.Player
 team remove NotHunt.Hunters
@@ -64,6 +67,11 @@ scoreboard objectives add nothunt.deathcount deathCount
 scoreboard objectives add nothunt.posx dummy
 scoreboard objectives add nothunt.posy dummy
 scoreboard objectives add nothunt.posz dummy
+scoreboard objectives add nothunt.runnershud dummy
+scoreboard players set @a nothunt.runnershud 1
+scoreboard objectives add Hud trigger
+scoreboard objectives add nothunt.latesthudstate dummy
+scoreboard players set @a nothunt.latesthudstate 1
 
 kill @e[type=marker,tag=nothunt.hunterpointer]
 

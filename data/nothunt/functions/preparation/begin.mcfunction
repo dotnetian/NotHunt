@@ -146,4 +146,6 @@ scoreboard players set @a nothunt.deathcount 0
 
 execute as @a[team=NotHunt.Hunters] run summon marker ~ ~ ~ {Tags: ["nothunt.hunterpointer","global.ignore"]}
 
+scoreboard players enable @a[team=NotHunt.Runners] Hud
+
 function nothunt:ingame/loop
