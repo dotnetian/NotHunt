@@ -156,3 +156,4 @@ scoreboard players enable @a[team=NotHunt.Runners] Hud
 
 function nothunt:ingame/loop
 function nothunt:ingame/giveeffects
+function nothunt:ingame/glowhunters
