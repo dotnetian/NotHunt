@@ -155,3 +155,4 @@ execute as @a[team=NotHunt.Hunters] run summon marker ~ ~ ~ {Tags: ["nothunt.hun
 scoreboard players enable @a[team=NotHunt.Runners] Hud
 
 function nothunt:ingame/loop
+function nothunt:ingame/giveeffects
