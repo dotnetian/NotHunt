@@ -154,6 +154,12 @@ execute as @a[team=NotHunt.Hunters] run summon marker ~ ~ ~ {Tags: ["nothunt.hun
 
 scoreboard players enable @a[team=NotHunt.Runners] Hud
 
+scoreboard players enable @a[team=NotHunt.Hunters] Track
+
+execute as @a[team=NotHunt.Runners] run scoreboard players operation @s nothunt.playerid = #MatinButNot nothunt.playerid
+
+
+function nothunt:preparation/setids
 function nothunt:ingame/loop
 function nothunt:ingame/giveeffects
 function nothunt:ingame/glowhunters

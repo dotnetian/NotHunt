@@ -27,6 +27,10 @@ scoreboard objectives remove nothunt.runnershud
 scoreboard objectives remove Hud
 scoreboard objectives remove nothunt.latesthudstate
 scoreboard objectives remove nothunt.runnerslives
+scoreboard objectives remove Track
+scoreboard objectives remove nothunt.playerid
+scoreboard objectives remove nothunt.tracking
+tag @a remove nothunt.idchecked
 
 tag @a remove NotHunt.Player
 team remove NotHunt.Hunters
@@ -78,6 +82,11 @@ scoreboard objectives add nothunt.runnerslives dummy
 scoreboard players set #MatinButNot nothunt.runnerslives 1
 scoreboard objectives add nothunt.deadrunners dummy
 scoreboard players set #MatinButNot nothunt.deadrunners 0
+scoreboard objectives add Track trigger
+scoreboard players set @a Track 0
+scoreboard objectives add nothunt.playerid dummy
+scoreboard objectives add nothunt.tracking trigger
+scoreboard players set @a nothunt.tracking -1
 
 kill @e[type=marker,tag=nothunt.hunterpointer]
 

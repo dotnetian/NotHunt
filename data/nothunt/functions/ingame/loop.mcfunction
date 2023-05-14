@@ -14,5 +14,6 @@ execute if score #MatinButNot nothunt.objective matches 2 run function nothunt:i
 function nothunt:ingame/objectives/hunterswin
 
 execute as @a[team=NotHunt.Runners] run function nothunt:ingame/togglehud
+execute as @a[team=NotHunt.Hunters] run function nothunt:ingame/toggletrack
 
 execute if score #MatinButNot nothunt.objective matches 0 run function nothunt:ingame/objectives/killdragon
